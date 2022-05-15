@@ -7,14 +7,14 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <> 
+    <div className='app'>
       <Router>
         <Home/>
         <Routes>
             
         </Routes>
       </Router>
-    </>
+      </div>
   );
 }
 
