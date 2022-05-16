@@ -6,6 +6,7 @@ import '../pages/syless.css'
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { FaChevronCircleDown } from 'react-icons/fa';
+import { Link} from 'react-router-dom';
 
 function Home() {
     const characters = useSelector((state) => state.characters.items);
@@ -35,19 +36,25 @@ function Home() {
 
     return (
         <div>
-            <h1>characters</h1>
-
+            <h3>Characters</h3>
+            
             <Masonry
                 breakpointCols={4}
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column">
                 {characters.map((item,idx) => (
                     <div key={idx}>
+                        <Link style={{textDecoration:'none'}} to={`char/${item.char_id}`}>
                         <img style={{ width: '100%' }} src={item.img} alt={item.name} />
                         <div className='char-name'>{item.name}</div>
+                        </Link>
+                        
                     </div>
                 ))}
             </Masonry>
+            
+
+            
                 
           
 
